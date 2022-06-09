@@ -10,5 +10,16 @@
 
 // GLOBAL VARIABLES
 
-var addToDoEl = document.querySelector('#add-todo')
+var form = document.querySelector('form')
+
 var toDoListEl = document.querySelector('#todo-list')
+var toDoListArray = []
+toDoListEl.innerHTML = toDoListArray.innerHTML
+
+form.onsubmit = function(e) {
+    e.preventDefault()
+    var listItem = document.querySelector('input')
+    
+    console.log(listItem.value)
+
+}
