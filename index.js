@@ -14,12 +14,24 @@ var form = document.querySelector('form')
 
 var toDoListEl = document.querySelector('#todo-list')
 var toDoListArray = []
+toDoListEl.innerHTML = ""
 toDoListEl.innerHTML = toDoListArray.innerHTML
+
+
 
 form.onsubmit = function(e) {
     e.preventDefault()
-    var listItem = document.querySelector('input')
-    
-    console.log(listItem.value)
+    var item = document.querySelector('input')
 
+    var liEl = document.createElement('li')
+    var btnEl = document.createElement('button')
+    toDoListEl.appendChild(liEl)
+    liEl.appendChild(btnEl)
+
+
+    input = ""
+
+    
+    //toDoListArray.push(listItem.value)
+    //toDoListEl.innerHTML = toDoListArray.innerHTML
 }
