@@ -12,26 +12,23 @@
 
 var form = document.querySelector('form')
 
-var toDoListEl = document.querySelector('#todo-list')
-var toDoListArray = []
-toDoListEl.innerHTML = ""
-toDoListEl.innerHTML = toDoListArray.innerHTML
-
 
 
 form.onsubmit = function(e) {
     e.preventDefault()
     var item = document.querySelector('input')
-
+    
+    var toDoListEl = document.querySelector('#todo-list')
     var liEl = document.createElement('li')
     var btnEl = document.createElement('button')
     toDoListEl.appendChild(liEl)
     liEl.appendChild(btnEl)
+    btnEl.textContent = item.value
+    item.value = ""
 
-
-    input = ""
-
-    
-    //toDoListArray.push(listItem.value)
-    //toDoListEl.innerHTML = toDoListArray.innerHTML
+    btnEl.onclick = function() {
+        btnEl.style.textDecoration = 'line-through'
+    }
 }
+
+
