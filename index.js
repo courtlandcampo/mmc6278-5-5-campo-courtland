@@ -13,11 +13,11 @@
 
 var form = document.querySelector('form')
 var toDoList = document.querySelector('#todo-list')
+var item = document.querySelector('input') //accessing form inputs
 
 
 form.onsubmit = function(e) {
     e.preventDefault() //stops HTML from taking over
-    var item = document.querySelector('input') //accessing form inputs
     
     if (item.value.trim() === "") {
         return
