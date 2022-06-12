@@ -10,18 +10,22 @@
 
 // GLOBAL VARIABLES
 
-var form = document.querySelector('form')
 
+var form = document.querySelector('form')
+var toDoList = document.querySelector('#todo-list')
 
 
 form.onsubmit = function(e) {
     e.preventDefault() //stops HTML from taking over
     var item = document.querySelector('input') //accessing form inputs
     
-    var toDoListEl = document.querySelector('#todo-list')
+    if (item.value.trim() === "") {
+        return
+    }
+
     var liEl = document.createElement('li') // creates bullet points
     var btnEl = document.createElement('button') //makes bullet points buttons
-    toDoListEl.appendChild(liEl) //add bullets to the to do list
+    toDoList.appendChild(liEl) //add bullets to the to do list
     liEl.appendChild(btnEl)
     
     btnEl.textContent = item.value //inserts form string into the button
@@ -33,7 +37,7 @@ form.onsubmit = function(e) {
         if (buttonClicks === 0){
         btnEl.style.textDecoration = 'line-through' //one click = strikthrough
         buttonClicks++
-        } else if (buttonClicks ===1){ 
+        } else if (buttonClicks === 1){ 
             liEl.remove() //two clicks = removal
         }
     }
